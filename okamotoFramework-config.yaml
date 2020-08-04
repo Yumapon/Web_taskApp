@@ -1,9 +1,9 @@
 framework-config: 1.0
 to_beans:
-  - name: #instance名
-    type: #classFileの場所
-  - name: #instance名
-    type: #classFileの場所
+  - name: #TOのinstance名
+    type: #TOのclassFileの場所
+  - name: #TOのinstance名
+    type: #TOのclassFileの場所
 global-forwards: #アプリケーション共通のフォワード定義
  - name: link
    path: test_link.jsp
@@ -11,12 +11,12 @@ global-forwards: #アプリケーション共通のフォワード定義
    #contextRelative:
    #module:
    #className:
-action-mappings:
+action-mappings: #属性は順不動
  - name: #このアクションで使用するToオブジェクト
    type: #呼び出すアクションを実装しているアクションクラス
    path: #呼び出すアクション
    input: #このアクションの入力ページ(jsp)
-   scope: request #requestかsessionを指定可能。sessionが指定されていた場合は、
+   scope: request #requestかsessionを指定可能。sessionが指定されていた場合は、sessionにname属性の値でtoを格納する。
    forward: #アクションごとのフォワード定義
     - name: success #遷移先の論理名
       path: /hogehoge.jsp #遷移先の実際のパス名
@@ -24,6 +24,27 @@ action-mappings:
       path: /errorhoge.jsp
     - name: test
       path: /test.jsp
+   #attribute:
+   #className:
+   #forward:
+   #id:
+   #include:
+   #parameter:
+   #prefix:
+   #unknown:
+   #validate:
+ - name: #このアクションで使用するToオブジェクト
+   type: #呼び出すアクションを実装しているアクションクラス
+   path: #呼び出すアクション
+   input: #このアクションの入力ページ(jsp)
+   scope: request #requestかsessionを指定可能。sessionが指定されていた場合は、sessionにname属性の値でtoを格納する。
+   forward: #アクションごとのフォワード定義
+   - name: success #遷移先の論理名
+     path: /hogehoge.jsp #遷移先の実際のパス名
+   - name: error
+     path: /errorhoge.js
+   - name: test
+     path: /test.jsp
    #attribute:
    #className:
    #forward:
