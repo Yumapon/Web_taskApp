@@ -1,0 +1,5 @@
+#DBの設定
+DRIVER: com.mysql.cj.jdbc.Driver #driver名
+URL: jdbc:mysql://localhost:3306/TaskDB #DBのURL
+USER: yuma #DBのユーザ
+PASSWORD: password #DBのパスワード
